@@ -1,0 +1,208 @@
+<html>
+<head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+   <title>Simple Product Manager</title>
+   
+   <link rel="stylesheet" href="style.css">
+   <script src="jquery.min.js"></script>
+   <script src="jquery.js"></script>
+
+   
+</head>
+<body>
+   
+<div id="login-page"> 
+   <div id="title">
+
+      <h1>Simple Product Manager</h1>
+   </div>
+   <div id="login-form"> <!-- inspiration: https://codepen.io/andreimarian/pen/XeZyQK -->
+         <header>Login to your account</header>
+         <br/>
+         <input type="text" name="username" id="username" placeholder="Username" required>
+         <br/><br/>
+         <input type="password" name="password" id="password" placeholder="Password" required>
+         <br/><br/>
+         <input type="submit" name="submit" id="login-button" value="LOGIN">
+         <div id="guest-login">
+         <h4>Don't have an account?</h4>
+         <button id="login-as-guest">Login as guest</button>
+      </div>
+   </div>
+ </div>
+
+   <div id="mailbox">
+      <button id="mailboxclose" class="btn info close">Close</button>
+      <p>No new messages</p>
+   </div>
+
+   <div id="charts">
+      <div class="Pie charts">
+         <a href="#">Available after purchase</a>
+      </div>
+   </div>
+
+   <div id="addbox">
+      <h3>Add product</h3>
+      <input type="text" id="addboximage" placeholder="(image name)" />
+      <br />
+      <label>Is in stock?</label>
+      <input type="checkbox" id="addboxonstock" value="True" checked/>Yes
+      <input type="checkbox" id="addboxnotonstock" value="False" />No
+      <br />
+
+      <input type="text" id="addboxtitle" placeholder="(product title)" />
+      <br />
+      <input type="text" id="addboxbrand" placeholder="(product brand)" />
+      <br />
+      <input type="number" min="0" max="99999" id="addboxprice" placeholder="(product price)" />
+      <br />
+
+      <button id="addboxadd" class="btn info save">Add</button>
+      <button id="addboxclose" class="btn info close">Close</button>
+      <p class="errorAdd"></p>
+   </div>
+   
+   <div id="editbox">
+      <h3>Edit product</h3>
+      <p id="editboxid"></p>
+      <input type="text" id="editboximage" placeholder="(image name)" />
+      <br />
+      <label>Is in stock?</label>
+      <input type="checkbox" id="editboxonstock" value="True" checked />Yes
+      <input type="checkbox" id="editboxnotonstock" value="False"/>No
+      <br />
+      <input type="text" id="editboxtitle" placeholder="(product title)" />
+      <br />
+      <input type="text" id="editboxbrand" placeholder="(product brand)" />
+      <br />
+      <input type="number" min="0" max="99999" id="editboxprice" placeholder="(product price)" />
+      <br />
+      <button id="editboxsave" class="btn info save">Save</button>
+      <button id="editboxclose" class="btn info close">Close</button>
+      <p class="errorEdit"></p>
+   </div>   
+   <div id="container">
+
+      <div id="menu">
+         <i class="fa fa-times mobile-only" aria-hidden="true"></i>
+         
+            <div class="account">
+               <div class="profile">
+                  <img id="avatar" src="https://i.pinimg.com/736x/7f/a8/91/7fa891d31513863fd63a04456ea8db74--avatar.jpg">
+                  <div class="name">
+                     <h3>John Doe</h3>
+                  </div>
+                  <div class="position">
+                     <h4>Guest</h4>
+                  </div>
+               </div>
+            </div>
+            <div class="other-links">
+               <div class="mailbox">
+                  <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Mailbox</a>
+               </div> 
+               <br/>
+               <div class="graphs">
+                  <a href="#"><i class="fa fa-pie-chart" aria-hidden="true"></i> Graphs</a>
+               </div>
+               <br/>
+               <div class="forms">
+                  <a href="#"><i class="fa fa-check-square" aria-hidden="true"></i> Forms</a>
+               </div>
+               <br/>
+            
+               <div class="widgets">
+                  <a href="#"><i class="fa fa-snowflake-o" aria-hidden="true"></i> Widgets</a>
+               </div>
+               <br/>
+               <div class="appereance">
+                  <a href="#"><i class="fa fa-sitemap" aria-hidden="true"></i> Appereance</a>
+               </div>
+               <br/>
+               <div class="appereance">
+                  <a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+               </div>
+               <br/>
+               <div class="other-pages">
+                  <a href="#"><i class="fa fa-file" aria-hidden="true"></i> Other Pages</a>
+               </div>
+               <br/>
+            </div>
+
+            <div class="buttons">
+               <button class="btn info orange" id="add">Add</button>
+               <button class="btn info orange" id="reset">Reset</button>
+            
+            </div>
+
+         </div>
+
+      <div id="header">
+
+         <div class="search">
+            <button id="submit-search" type="submit" onclick="alert('Nothing interesting here...')"><i class="fa fa-search" aria-hidden="true"></i>
+            </button>  <!-- de adaugat functionalitate -->
+         </div>
+         <div id="hello">
+            <p>Hello, Guest!</p>
+         </div>
+         <div id="log-out">
+            <a href="#">Log out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+         </div>
+      </div>
+
+      <div id="grafic">
+         <i class="fa fa-bars" aria-hidden="true"></i>
+      <!--  <br/>
+         <h2>THIS WEEK'S SALES</h2>
+
+         <img src="http://webdesignertricks.com/wp-content/uploads/2015/12/7.-chartjs.png" width="50%">
+         <br/><br/>
+         <hr/> -->
+
+   
+                    <h2 class="title">PRODUCTS SOLD THIS WEEK (3041)</h2>
+                    <br/>
+                    <ul class="chart">
+                        <li>
+                            <p class="product cups">Spoon (KitchenShop)</p>
+                            <p class="percentage">21%</p>
+                        </li>
+                        <li>
+                            <p id="best-seller">Best seller!</p>
+                            <p class="product books">Book (Editura Trei)</p>
+                            <p class="percentage">39%</p>
+                           
+                        </li>
+                        <li>
+                            <p class="product spoons">Cup (Nobila Casa)</p>
+                            <p class="percentage">9%</p>
+                        </li>
+                        <li>
+                            <p class="product mouses">Mouse (Logitech)</p>
+                            <p class="percentage">16%</p>
+                        </li>
+                        <li>
+                            <p class="product chairs">Chair <br/>(IKEA)</p>
+                            <p class="percentage">14%</p>
+                        </li>
+                         <li>
+                            <p class="product other">Other products</p>
+                            <p class="percentage">1%</p>
+                        </li>
+                    </ul>
+ 
+ <br/><br/>
+ <hr/><br/>
+<h2>Products listed on the website</h2> <br/>
+         <div id="content">
+
+
+         </div>
+   </div>
+</body>
+</html>
